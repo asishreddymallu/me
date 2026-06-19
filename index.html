@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asish | IIT Hyderabad</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="nav-trigger-zone">
+                <button class="menu-icon-btn" aria-label="Toggle Menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#studies">STUDIES</a></li>
+                    <li><a href="#shows">SHOWS</a></li>
+                    <li><a href="#music">MUSIC</a></li>
+                    <li><a href="#games">GAMES</a></li>
+                    <li><a href="#list">Q&A</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="header-spacer"></div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-left load-reveal-left">
+                <h1 class="hero-title">MALLU<br>ASISH REDDY</h1>
+                <p class="hero-tagline">Computer Science student at IIT Hyderabad.
+
+I build software, solve problems, and occasionally spend hours debugging a missing semicolon. Currently exploring web development, data structures & algorithms, and everything that helps transform ideas into reality.</p>
+                <div class="hero-footer">
+                    <span>HYDERABAD, IN</span>
+                    <span id="liveClock">JUN 19, 2026 — 3:09 PM</span>
+                </div>
+            </div>
+            <div class="hero-right load-reveal-right">
+                <img src="images/me.jpg" alt = "Me">
+            </div>
+        </section>
+
+        <section class="bio-section">
+            <div class="bio-text-container reveal-on-scroll">
+                <p>I'm a Chinese designer who grew up in Hainan, now living in Brooklyn. I realize notable ideas across branding, digital products, and experience — I care just as much about impact as I do about craft. I'm a total detail freak; always asking why, always delivering quality.</p>
+                <div class="bio-buttons">
+                    <a href="#studies" class="btn btn-primary">CASE STUDIES</a>
+                    <a href="#" class="btn btn-secondary">MORE WORKS</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-section" id="studies">
+            <h2 class="section-heading reveal-on-scroll">I work design <span class="zh-text">设备</span></h2>
+            <div class="experience-grid">
+                <div class="exp-card reveal-on-scroll">
+                    <h3>SENIOR LEAD @ WORK & CO</h3>
+                    <div class="exp-meta">
+                        <span class="stars">★★</span>
+                        <span class="years">2021 - Present</span>
+                    </div>
+                </div>
+                <div class="exp-card reveal-on-scroll">
+                    <h3>SENIOR DESIGNER @ TOGETHER AGENCY</h3>
+                    <div class="exp-meta">
+                        <span class="icon-placeholder">[T]</span>
+                        <span class="years">2019 - 2021</span>
+                    </div>
+                </div>
+                <div class="exp-card highlight-card reveal-on-scroll">
+                    <h3>VISUAL DESIGNER @ FROG</h3>
+                    <div class="exp-meta">
+                        <span class="brand-text">frog</span>
+                        <span class="years">2018 - 2019</span>
+                    </div>
+                </div>
+                <div class="exp-card reveal-on-scroll">
+                    <h3>DESIGNER & DESIGN MANAGER @ GCA TBD* STUDIO</h3>
+                    <div class="exp-meta">
+                        <span class="icon-placeholder">TBD*</span>
+                        <span class="years">2017 - 2018</span>
+                    </div>
+                </div>
+                <div class="exp-card reveal-on-scroll">
+                    <h3>DESIGN INTERN @ SYPARTNERS</h3>
+                    <div class="exp-meta">
+                        <span class="brand-text">SYP</span>
+                        <span class="years">2017</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="media-section" id="shows">
+            <h2 class="section-heading reveal-on-scroll">I live for shows <span class="zh-text">剧迷</span></h2>
+            <div class="media-slider-container" id="showsSlider">
+                <div class="media-slider">
+                    <div class="media-card reveal-on-scroll">
+                        <div class="card-badge">BILL'S FAVORITE</div>
+                        <div class="media-poster"></div>
+                        <h4>EVERYTHING EVERYWHERE ALL AT ONCE</h4>
+                        <p class="media-genre">ADVENTURE / FILM</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="media-poster"></div>
+                        <h4>THE DRAMA</h4>
+                        <p class="media-genre">FILM</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="card-badge">TV SERIES</div>
+                        <div class="media-poster"></div>
+                        <h4>PLURIBUS</h4>
+                        <p class="media-genre">TV SERIES / COMEDY</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="media-poster"></div>
+                        <h4>THE STUDIO</h4>
+                        <p class="media-genre">TV SERIES / COMEDY</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev" id="showsPrev" aria-label="Previous Shows">←</button>
+                <button class="slider-btn next" id="showsNext" aria-label="Next Shows">→</button>
+            </div>
+        </section>
+
+        <section class="media-section" id="music">
+            <h2 class="section-heading reveal-on-scroll">I live for music <span class="zh-text">乐迷</span></h2>
+            <div class="media-slider-container" id="musicSlider">
+                <div class="media-slider">
+                    <div class="media-card reveal-on-scroll">
+                        <div class="card-badge">BEYHIVE CHRONICLES</div>
+                        <div class="media-poster music-poster-variant"></div>
+                        <h4>RENAISSANCE</h4>
+                        <p class="media-genre">BEYONCÉ / POP & HOUSE</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="media-poster music-poster-variant"></div>
+                        <h4>COWBOY CARTER</h4>
+                        <p class="media-genre">BEYONCÉ / COUNTRY & POP</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="card-badge">HEAVY ROTATION</div>
+                        <div class="media-poster music-poster-variant"></div>
+                        <h4>SOS</h4>
+                        <p class="media-genre">SZA / R&B</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="media-poster music-poster-variant"></div>
+                        <h4>HIT ME HARD AND SOFT</h4>
+                        <p class="media-genre">BILLIE EILISH / ALTERNATIVE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev" id="musicPrev" aria-label="Previous Tracks">←</button>
+                <button class="slider-btn next" id="musicNext" aria-label="Next Tracks">→</button>
+            </div>
+        </section>
+
+        <section class="media-section" id="games">
+            <h2 class="section-heading reveal-on-scroll">Switch is my jam <span class="zh-text">玩家</span></h2>
+            <div class="media-slider-container" id="gamesSlider">
+                <div class="media-slider">
+                    <div class="media-card reveal-on-scroll">
+                        <div class="card-badge">COMPLETED</div>
+                        <div class="media-poster game-poster-variant"></div>
+                        <h4>THE LEGEND OF ZELDA: TEARS OF THE KINGDOM</h4>
+                        <p class="media-genre">NINTENDO / ADVENTURE</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="media-poster game-poster-variant"></div>
+                        <h4>ANIMAL CROSSING: NEW HORIZONS</h4>
+                        <p class="media-genre">NINTENDO / SIMULATION</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="card-badge">MULTIPLAYER</div>
+                        <div class="media-poster game-poster-variant"></div>
+                        <h4>SUPER MARIO BROS. WONDER</h4>
+                        <p class="media-genre">NINTENDO / PLATFORMER</p>
+                    </div>
+                    <div class="media-card reveal-on-scroll">
+                        <div class="media-poster game-poster-variant"></div>
+                        <h4>MARIO KART 8 DELUXE</h4>
+                        <p class="media-genre">NINTENDO / RACING</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev" id="gamesPrev" aria-label="Previous Games">←</button>
+                <button class="slider-btn next" id="gamesNext" aria-label="Next Games">→</button>
+            </div>
+        </section>
+
+        <section class="qa-section" id="list">
+            <div class="qa-layout">
+                <div class="qa-content">
+                    <div class="qa-block reveal-on-scroll">
+                        <h3>What makes a good designer, in your opinion?</h3>
+                        <p>I think a good designer understands the purpose, the meaning and the people they are designing for. The design can be cool and all if the audience doesn't get it, the designer fails doing their job.</p>
+                    </div>
+                    <div class="qa-block reveal-on-scroll">
+                        <h3>What do you do when you are not designing?</h3>
+                        <p>I have a healthy, disciplined lifestyle. You will see me sweating at a gym, learning new cooking recipes, chilling in a park or by the water, watching shows, playing Nintendo Switch or rendering at a museum. I'm a huge beyhive, and I manage a Chinese Beyonce fan account on the side!</p>
+                    </div>
+                    <div class="qa-block reveal-on-scroll">
+                        <h3>There is skill, and there's talent. What is a natural talent you've always had?</h3>
+                        <p>I'm pretty in tune with music, especially with rhythm. Some of my friends say I'm a good singer. I probably will be if I had proper vocal training. I did break my voice on stage in middle school singing competition :( But that didn't stop me from having shower concerts.</p>
+                    </div>
+                </div>
+                <div class="qa-sticky-title">
+                    <h2 class="reveal-on-scroll">Q&A</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- The Whole Footer is a single div with class "footer" that contains social media links and copyright information. The social media links include Instagram, LinkedIn, and a link to the resume. Each link is represented by an SVG icon. The copyright information states "© 2026–Present Mallu Asish Reddy." -->
+    <div class="footer">
+        <div class="social-icon-wrapper">
+            <!-- InstaGram -->
+            <a href="https://www.instagram.com/asishreddy_mallu/" target="_blank" class="social-icon w-inline-block">
+                <div class="w-embed">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 503.84 503.84" width="100%" fill="currentColor">
+                        <path d="M256,49.47c67.27,0,75.23.26,101.8,1.47,24.56,1.12,37.9,5.22,46.78,8.67a78,78,0,0,1,29,18.85,78,78,0,0,1,18.85,29c3.45,8.88,7.55,22.22,8.67,46.78,1.21,26.57,1.47,34.53,1.47,101.8s-.26,75.23-1.47,101.8c-1.12,24.56-5.22,37.9-8.67,46.78a83.51,83.51,0,0,1-47.81,47.81c-8.88,3.45-22.22,7.55-46.78,8.67-26.56,1.21-34.53,1.47-101.8,1.47s-75.24-.26-101.8-1.47c-24.56-1.12-37.9-5.22-46.78-8.67a78,78,0,0,1-29-18.85,78,78,0,0,1-18.85-29c-3.45-8.88-7.55-22.22-8.67-46.78-1.21-26.57-1.47-34.53-1.47-101.8s.26-75.23,1.47-101.8c1.12-24.56,5.22-37.9,8.67-46.78a78,78,0,0,1,18.85-29,78,78,0,0,1,29-18.85c8.88-3.45,22.22-7.55,46.78-8.67,26.57-1.21,34.53-1.47,101.8-1.47m0-45.39c-68.42,0-77,.29-103.87,1.52S107,11.08,91,17.3A123.68,123.68,0,0,0,46.36,46.36,123.68,123.68,0,0,0,17.3,91c-6.22,16-10.48,34.34-11.7,61.15S4.08,187.58,4.08,256s.29,77,1.52,103.87S11.08,405,17.3,421a123.68,123.68,0,0,0,29.06,44.62A123.52,123.52,0,0,0,91,494.69c16,6.23,34.34,10.49,61.15,11.71s35.45,1.52,103.87,1.52,77-.29,103.87-1.52S405,500.92,421,494.69A128.74,128.74,0,0,0,494.69,421c6.23-16,10.49-34.34,11.71-61.15s1.52-35.45,1.52-103.87-.29-77-1.52-103.87S500.92,107,494.69,91a123.52,123.52,0,0,0-29.05-44.62A123.68,123.68,0,0,0,421,17.3c-16-6.22-34.34-10.48-61.15-11.7S324.42,4.08,256,4.08Z" transform="translate(-4.08 -4.08)">
+                        </path>
+                        <path d="M256,126.64A129.36,129.36,0,1,0,385.36,256,129.35,129.35,0,0,0,256,126.64ZM256,340a84,84,0,1,1,84-84A84,84,0,0,1,256,340Z" transform="translate(-4.08 -4.08)">
+                        </path>
+                        <circle cx="386.4" cy="117.44" r="30.23">
+                        </circle>
+                    </svg>
+                </div>
+            </a>
+    <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/asishreddymallu/" target="_blank" class="social-icon w-inline-block">
+                <div class="w-embed">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" width="100%" fill="currentColor">
+                        <path class="cls-1" d="M138.92,0H16.21A10.51,10.51,0,0,0,5.58,10.38V133.61A10.52,10.52,0,0,0,16.21,144H138.92a10.54,10.54,0,0,0,10.66-10.39V10.38A10.53,10.53,0,0,0,138.92,0ZM48.29,122.71H26.93V54H48.29ZM37.61,44.59A12.38,12.38,0,1,1,50,32.2,12.39,12.39,0,0,1,37.61,44.59Zm90.68,78.12H106.94V89.29c0-8-.15-18.23-11.1-18.23C84.73,71.06,83,79.75,83,88.71v34H61.68V54H82.17v9.39h.29c2.85-5.41,9.81-11.1,20.2-11.1,21.63,0,25.63,14.23,25.63,32.73Z" transform="translate(-5.58)">
+                        </path>
+                    </svg>
+                </div>
+            </a>
+    <!-- Resume -->
+            <a href="https://cdn.prod.website-files.com/5bcd190539ce888450a18425/66199265389bd9904d91ef03_BillChien_Resume_04122024.pdf" target="_blank" class="social-icon w-inline-block">
+                <div class="w-embed">
+                    <svg width="100%" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.95826 2.06509C9.18074 2.0358 9.40682 2.05062 9.62357 2.1087H9.6222L22.8267 5.64767C23.2642 5.76494 23.6372 6.0511 23.8638 6.44326C24.0904 6.83542 24.152 7.3015 24.0351 7.73907L19.6117 24.2433C19.4947 24.681 19.2087 25.0544 18.8165 25.2812C18.4243 25.5081 17.9581 25.5699 17.5203 25.4531L4.3158 21.9127C3.87833 21.7955 3.50532 21.5093 3.27873 21.1171C3.05215 20.725 2.99054 20.2589 3.10744 19.8213L7.53081 3.31707C7.58887 3.1003 7.68905 2.8971 7.82565 2.71906C7.96224 2.54102 8.13257 2.39163 8.32691 2.27942C8.52124 2.16721 8.73578 2.09438 8.95826 2.06509ZM6.19869 1.47108C5.89821 1.86277 5.67783 2.30982 5.55013 2.7867L1.12813 19.291C0.870091 20.2538 1.00508 21.2798 1.50341 22.1431C2.00174 23.0065 2.82259 23.6366 3.78543 23.8948L16.9872 27.4337C17.4641 27.5615 17.9614 27.594 18.4509 27.5296C18.9403 27.4651 19.4123 27.3048 19.8398 27.0579C20.2673 26.8111 20.642 26.4824 20.9424 26.0907C21.2429 25.699 21.4633 25.2519 21.591 24.7751L26.0144 8.2708C26.1424 7.79403 26.1752 7.29672 26.111 6.80726C26.0468 6.3178 25.8868 5.84578 25.6402 5.41814C25.3936 4.99051 25.0651 4.61565 24.6736 4.31495C24.2821 4.01425 23.8352 3.79361 23.3584 3.66563L10.1539 0.128028C9.67708 0.000284277 9.17972 -0.0322781 8.69028 0.0322005C8.20083 0.0966791 7.72888 0.256935 7.30137 0.503819C6.87386 0.750703 6.49917 1.07938 6.19869 1.47108ZM9.40322 5.88918C9.3212 5.99599 9.26103 6.11791 9.22614 6.24798C9.1912 6.37803 9.18222 6.51369 9.19972 6.64722C9.21722 6.78074 9.26085 6.90951 9.32813 7.02617C9.39541 7.14282 9.48501 7.24508 9.59182 7.3271C9.69862 7.40912 9.82054 7.46929 9.95061 7.50418L19.8499 10.156C20.1125 10.2263 20.3924 10.1895 20.6278 10.0535C20.8633 9.91747 21.0351 9.69352 21.1054 9.43086C21.1757 9.16821 21.1388 8.88837 21.0029 8.65292C20.8669 8.41746 20.6429 8.24567 20.3803 8.17534L10.4823 5.52351C10.3523 5.48856 10.2166 5.47959 10.0831 5.49709C9.94958 5.51459 9.82081 5.55822 9.70416 5.6255C9.5875 5.69278 9.48524 5.78238 9.40322 5.88918ZM8.55368 9.91737C8.31836 10.0535 8.14674 10.2775 8.07655 10.5401V10.5388C8.04161 10.6688 8.03263 10.8045 8.05013 10.938C8.06763 11.0715 8.11127 11.2003 8.17855 11.3169C8.24582 11.4336 8.33542 11.5359 8.44223 11.6179C8.54904 11.6999 8.67096 11.7601 8.80103 11.795L18.7003 14.4482C18.8304 14.483 18.9662 14.4918 19.0997 14.4742C19.2333 14.4566 19.3621 14.4128 19.4787 14.3454C19.5954 14.278 19.6976 14.1883 19.7796 14.0814C19.8616 13.9745 19.9217 13.8525 19.9565 13.7223C19.9913 13.5922 20.0002 13.4565 19.9825 13.3229C19.9649 13.1893 19.9212 13.0605 19.8538 12.9439C19.7864 12.8272 19.6966 12.725 19.5897 12.643C19.4828 12.5611 19.3608 12.5009 19.2307 12.4661L9.33139 9.81429C9.06874 9.74418 8.789 9.78126 8.55368 9.91737ZM7.40448 14.209C7.16919 14.3448 6.99745 14.5685 6.92697 14.8309C6.85681 15.0934 6.89371 15.373 7.02955 15.6082C7.16538 15.8435 7.38906 16.0153 7.65144 16.0857L14.2537 17.8559C14.3838 17.8907 14.5196 17.8996 14.6531 17.882C14.7867 17.8643 14.9155 17.8206 15.0321 17.7532C15.1488 17.6858 15.251 17.596 15.333 17.4891C15.415 17.3822 15.4751 17.2602 15.5099 17.1301C15.5447 16.9999 15.5536 16.8642 15.5359 16.7306C15.5183 16.5971 15.4745 16.4683 15.4071 16.3516C15.3397 16.235 15.25 16.1328 15.1431 16.0508C15.0362 15.9688 14.9142 15.9087 14.7841 15.8739L8.18181 14.1064C7.91934 14.0363 7.63976 14.0732 7.40448 14.209Z">
+                        </path>
+                    </svg>
+                </div>
+            </a>
+            <!-- Github -->
+            <a href="https://cdn.prod.website-files.com/5bcd190539ce888450a18425/66199265389bd9904d91ef03_BillChien_Resume_04122024.pdf" target="_blank" class="social-icon w-inline-block">
+                <div class="w-embed">
+                    <svg width="100%" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 .5C5.648.5.5 5.648.5 12
+                                c0 5.086 3.292 9.387 7.86 10.91
+                                .575.106.785-.25.785-.556
+                                0-.274-.01-1-.016-1.962
+                                -3.197.695-3.872-1.54-3.872-1.54
+                                -.523-1.328-1.278-1.682-1.278-1.682
+                                -1.045-.714.08-.699.08-.699
+                                1.155.081 1.763 1.186 1.763 1.186
+                                1.026 1.758 2.692 1.25 3.348.956
+                                .103-.743.402-1.25.73-1.537
+                                -2.553-.29-5.238-1.277-5.238-5.684
+                                0-1.255.448-2.282 1.183-3.087
+                                -.119-.29-.513-1.458.112-3.04
+                                0 0 .965-.309 3.162 1.18
+                                .917-.255 1.9-.382 2.878-.386
+                                .977.004 1.96.131 2.878.386
+                                2.196-1.489 3.16-1.18 3.16-1.18
+                                .626 1.582.232 2.75.114 3.04
+                                .737.805 1.181 1.832 1.181 3.087
+                                0 4.418-2.69 5.39-5.25 5.675
+                                .413.356.781 1.06.781 2.136
+                                0 1.543-.014 2.786-.014 3.166
+                                0 .308.207.668.79.555
+                                4.563-1.526 7.85-5.824 7.85-10.908
+                                0-6.352-5.148-11.5-11.5-11.5z">
+                        </path>
+                    </svg>
+                </div>
+            </a>
+            <!-- Gmail -->
+            <a href="mailto:mallu.asishreddy@gmail.com" target="_blank" class="social-icon w-inline-block">
+                <div class="w-embed">
+                    <svg width = "100%"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none">
+
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="
+                            M3 6
+                            L12 13
+                            L21 6
+
+                            M4 5
+                            H20
+                            A1 1 0 0 1 21 6
+                            V18
+                            A1 1 0 0 1 20 19
+                            H4
+                            A1 1 0 0 1 3 18
+                            V6
+                            A1 1 0 0 1 4 5
+                        "
+
+                        stroke="currentColor"
+                        stroke-width="2.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        </path>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <!-- Copy Right -->
+        <div id="w-node-ca1e73a7-f55b-c09c-6db5-4ac1c8901ccc-905642b6" class="c sy">
+            © 2026–Present Mallu Asish Reddy. 
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
