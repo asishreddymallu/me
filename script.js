@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeEl = document.getElementById("time");
 
     function refreshClock() {
+        if (!dateEl || !timeEl) return;
         const now = new Date();
 
         const dateConfig = { month: 'short', day: '2-digit', year: 'numeric' };
@@ -22,34 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =======================================================
-       MEDIA SLIDERS (Shows / Music / Games)
-       Wires up the prev/next arrow buttons to scroll
-       their matching horizontal slider by a fixed step.
-       ======================================================= */
-    function initSliderControl(sliderId, prevBtnId, nextBtnId) {
-        const container = document.getElementById(sliderId);
-        const prevBtn = document.getElementById(prevBtnId);
-        const nextBtn = document.getElementById(nextBtnId);
-
-        if (!container || !prevBtn || !nextBtn) return;
-
-        const stepWidth = 310; // px scrolled per click (card width + gap)
-
-        nextBtn.addEventListener('click', () => {
-            container.scrollBy({ left: stepWidth, behavior: 'smooth' });
-        });
-
-        prevBtn.addEventListener('click', () => {
-            container.scrollBy({ left: -stepWidth, behavior: 'smooth' });
-        });
-    }
-
-    initSliderControl('showsSlider', 'showsPrev', 'showsNext');
-    initSliderControl('musicSlider', 'musicPrev', 'musicNext');
-    initSliderControl('gamesSlider', 'gamesPrev', 'gamesNext');
-
-
-    /* =======================================================
        SCROLL REVEAL ANIMATIONS
        Adds the "active" class to any .reveal-on-scroll element
        while it's in the viewport (and removes it when it
@@ -57,37 +30,37 @@ document.addEventListener('DOMContentLoaded', () => {
        past it). Falls back to showing everything immediately
        if IntersectionObserver isn't supported.
        ======================================================= */
-   const revealItems = document.querySelectorAll('.reveal-on-scroll');
+    const revealItems = document.querySelectorAll('.reveal-on-scroll');
 
-if ('IntersectionObserver' in window) {
+    if ('IntersectionObserver' in window) {
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
 
-        entries.forEach(entry => {
+            entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-                entry.target.classList.add('active');
+                    entry.target.classList.add('active');
 
-                observer.unobserve(entry.target);
-            }
+                    observer.unobserve(entry.target);
+                }
 
+            });
+
+        }, {
+            threshold: 0.05,
+            rootMargin: "0px 0px -10px 0px"
         });
 
-    }, {
-        threshold: 0.05,
-        rootMargin: "0px 0px -10px 0px"
-    });
+        revealItems.forEach(item => revealObserver.observe(item));
 
-    revealItems.forEach(item => revealObserver.observe(item));
+    } else {
 
-} else {
+        revealItems.forEach(item => {
+            item.classList.add('active');
+        });
 
-    revealItems.forEach(item => {
-        item.classList.add('active');
-    });
-
-}
+    }
 
 
 
@@ -97,62 +70,60 @@ if ('IntersectionObserver' in window) {
 
 
     const skillsSlider = document.getElementById("skillsSlider");
+    const skillsPrev = document.getElementById("skillsPrev");
+    const skillsNext = document.getElementById("skillsNext");
+    if (skillsSlider && skillsPrev && skillsNext && skillsSlider.querySelector(".media-card")) {
 
-const skillsPrev = document.getElementById("skillsPrev");
-const skillsNext = document.getElementById("skillsNext");
+        const firstCard =
+        skillsSlider.querySelector(".media-card");
 
-if (skillsSlider && skillsPrev && skillsNext) {
+        const scrollAmount =
+        firstCard.offsetWidth + 20;
 
-    const firstCard =
-    skillsSlider.querySelector(".media-card");
+        skillsNext.addEventListener("click", (e) => {
 
-    const scrollAmount =
-    firstCard.offsetWidth + 20;
+            e.preventDefault();
 
-    skillsNext.addEventListener("click", (e) => {
+            const maxScroll =
+                skillsSlider.scrollWidth - skillsSlider.clientWidth;
 
-        e.preventDefault();
+            if (
+                skillsSlider.scrollLeft + scrollAmount >=
+                maxScroll - 10
+            ) {
+                skillsSlider.scrollTo({
+                    left: 0,
+                    behavior: "smooth"
+                });
+            } else {
+                skillsSlider.scrollBy({
+                    left: scrollAmount,
+                    behavior: "smooth"
+                });
+            }
+        });
 
-        const maxScroll =
-            skillsSlider.scrollWidth - skillsSlider.clientWidth;
+        skillsPrev.addEventListener("click", (e) => {
 
-        if (
-            skillsSlider.scrollLeft + scrollAmount >=
-            maxScroll - 10
-        ) {
-            skillsSlider.scrollTo({
-                left: 0,
-                behavior: "smooth"
-            });
-        } else {
-            skillsSlider.scrollBy({
-                left: scrollAmount,
-                behavior: "smooth"
-            });
-        }
-    });
+            e.preventDefault();
 
-    skillsPrev.addEventListener("click", (e) => {
+            if (skillsSlider.scrollLeft <= 10) {
 
-        e.preventDefault();
+                skillsSlider.scrollTo({
+                    left:
+                        skillsSlider.scrollWidth -
+                        skillsSlider.clientWidth,
+                    behavior: "smooth"
+                });
 
-        if (skillsSlider.scrollLeft <= 10) {
+            } else {
 
-            skillsSlider.scrollTo({
-                left:
-                    skillsSlider.scrollWidth -
-                    skillsSlider.clientWidth,
-                behavior: "smooth"
-            });
+                skillsSlider.scrollBy({
+                    left: -scrollAmount,
+                    behavior: "smooth"
+                });
 
-        } else {
-
-            skillsSlider.scrollBy({
-                left: -scrollAmount,
-                behavior: "smooth"
-            });
-
-        }
-    });
-}
+            }
+        });
+    }
 });

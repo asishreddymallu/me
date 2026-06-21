@@ -37,119 +37,129 @@ a {
     text-decoration: none;
 }
 
-/* Chinese subtitle text used next to section headings */
-.zh-text {
-    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-    font-weight: 400;
-    opacity: 0.6;
-    margin-left: 0.5rem;
-}
 
-/* =======================================================
-   NAVIGATION BAR (left-aligned, expands on hover)
-   ======================================================= */
+
+
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: flex-start;   /* was: flex-end */
     padding: max(1rem, 2vw) max(1rem, 2.5vw);
     z-index: 1000;
-    pointer-events: none; /* lets clicks pass through empty header space */
+    pointer-events: none;
 }
-
+.nav-logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
 .nav-container {
     pointer-events: auto;
-    position: relative;
-    display: flex;
-    align-items: center;
 }
-
-/* Collapsed pill: just the hamburger icon */
+/* Collapsed: a small black rounded square, pinned to the right
+   (mirrors the logo's final expanded position so it doesn't jump) */
 .nav-trigger-zone {
     display: flex;
-    flex-direction: row; /* button stays left, links expand to the right */
-    background-color: #111;
-    border-radius: 1vw;
-    padding: 0.5rem;
-    overflow: hidden;
-    max-width: 5.5vw;
-    height: 5.5vw;
-    transition: var(--transition-menu);
-}
-
-.menu-icon-btn {
-    background: transparent;
-    border: none;
-    width: 4.5vw;
-    height: 4.5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-.menu-icon-btn .icon-bar {
-    display: block;
-    width: 18px;
-    height: 2px;
-    background-color: #fff;
+    justify-content: flex-end;
+    background-color: #111;
+    border-radius: 14px;
+    /* margin-left: auto;   ← delete this line */
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
     transition: var(--transition-menu);
 }
 
-/* Nav links are hidden/collapsed until the pill expands */
+/* Logo / icon — always visible, stays anchored at the right edge */
+.nav-logo {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-color);
+    font-family: "Chango", sans-serif;
+    font-size: 1.4rem;
+}
+
+/* Nav links: collapsed to nothing, fade/slide in on expand */
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    padding: 0 1.5rem 0 0.5rem;
+    justify-content: space-evenly;
+    flex: 1;
+    gap: 1.5rem;
+    padding: 0 1rem;
     opacity: 0;
-    transform: translateX(15px);
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
     transition: var(--transition-menu);
     pointer-events: none;
 }
 
 .nav-links a {
-    color: #fff;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: var(--bg-color);
     text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
     font-weight: 700;
     transition: opacity 0.2s ease;
 }
 
-.nav-links a:hover {
-    opacity: 0.6;
+/* Arrow that pops in before whichever link is hovered */
+.link-arrow {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-6px) scale(0.8);
+    margin-right: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Expanded state on hover: pill grows and links fade in,
-   hamburger bars rotate into an "X" */
+.nav-links a:hover .link-arrow {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    width: 0.8em;
+    margin-right: 0.45em;
+}
+
+.nav-links a:hover {
+    opacity: 0.85;
+}
+
+/* Expanded state: hovering anywhere on the pill grows it
+   into a full-width bar and reveals the links */
 .nav-container:hover .nav-trigger-zone {
-    max-width: 520px;
-    border-radius: 14px;
-    padding: 0.5rem 0.5rem 0.5rem 1.2rem;
+    width: 100%;
+    border-radius: 16px;
 }
 
 .nav-container:hover .nav-links {
     opacity: 1;
-    transform: translateX(0);
+    max-width: 100%;
     pointer-events: auto;
 }
 
-.nav-container:hover .menu-icon-btn .icon-bar:nth-child(1) {
-    transform: translateY(3.5px) rotate(45deg);
-}
 
-.nav-container:hover .menu-icon-btn .icon-bar:nth-child(2) {
-    transform: translateY(-3.5px) rotate(-45deg);
-}
+
+
+
+
+
+
+
 
 /* =======================================================
    PAGE LOAD ENTRANCE ANIMATIONS (hero only, runs once)
